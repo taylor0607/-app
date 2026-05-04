@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# LifeLink 捐血 App
 
-# Run and deploy your AI Studio app
+這是一個使用 React + Vite 作為前端，FastAPI + PostgreSQL 作為後端，並整合 Supabase 的全端應用程式。
 
-This contains everything you need to run your app locally.
+## 系統架構
+*   **前端**：React, TailwindCSS, Vite
+*   **後端**：FastAPI, SQLAlchemy
+*   **資料庫**：Supabase (PostgreSQL)
 
-View your app in AI Studio: https://ai.studio/apps/723fb53a-d258-43d2-b0e3-657e379f7035
+## 開發指南
 
-## Run Locally
+### 1. 安裝依賴
+```bash
+npm install
+cd backend && pip install -r requirements.txt
+```
 
-**Prerequisites:**  Node.js
+### 2. 環境變數設定
+請複製 `.env.example` 並更名為 `.env`，填入 Supabase 的連線資訊。
+前端需要 `.env.local`。
 
+### 3. 啟動服務
+**前端 (Terminal 1):**
+```bash
+npm run dev
+```
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+**後端 (Terminal 2):**
+```bash
+.\venv\Scripts\activate
+uvicorn backend.main:app --reload --port 8000
+```
